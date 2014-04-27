@@ -1,5 +1,5 @@
-CREATE DATABASE <your development database name>
-WITH OWNER = <your local db user>;
+CREATE DATABASE sinatra_postgres_development
+WITH OWNER = gschool_user;
 
-CREATE DATABASE <your test database name>
-WITH OWNER = <your local db user>;
+CREATE DATABASE sinatra_postgres_test
+WITH OWNER = gschool_user;
