@@ -27,4 +27,14 @@ class Application < Sinatra::Application
     DB[:artists].insert(:name => params[:name], :genre => params[:genre])
     redirect '/artists'
   end
+
+  get '/artists/:id' do
+    artist = DB[:artists].where(:id => params[:id]).to_a.first
+    erb :show, locals: {:artist => artist}
+  end
+
+  put '/artists/:id' do
+    DB[:artists].where(:id => params[:id]).update(:name => params[:name], :genre => params[:genre])
+    redirect '/artists'
+  end
 end

@@ -16,5 +16,14 @@ feature 'Homepage' do
 
     expect(page).to have_content 'Salvador Dali'
     expect(page).to have_content 'Surrealist'
+
+    click_link 'Salvador Dali'
+
+    fill_in 'genre', with: 'Surrealism'
+    click_button 'Update Artist'
+
+    expect(page).to have_no_content 'Surrealist'
+    expect(page).to have_content 'Surrealism'
+    expect(page).to have_content 'Salvador Dali'
   end
 end
