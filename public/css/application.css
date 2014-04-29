@@ -1,3 +1,27 @@
 body {
     background-color: orange;
 }
+
+#form_container {
+    margin: auto;
+    width: 400px;
+}
+
+#form_container form label {
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+}
+
+#form_container input {
+    font: 1em sans-serif;
+    width: 300px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+#form_container button {
+    margin-left: 94px;
+}
