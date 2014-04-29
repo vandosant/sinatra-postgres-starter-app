@@ -37,4 +37,9 @@ class Application < Sinatra::Application
     DB[:artists].where(:id => params[:id]).update(:name => params[:name], :genre => params[:genre])
     redirect '/artists'
   end
+
+  delete '/artists/:id' do
+    DB[:artists].where(:id => params[:id]).delete
+    redirect '/artists'
+  end
 end

@@ -25,5 +25,12 @@ feature 'Homepage' do
     expect(page).to have_no_content 'Surrealist'
     expect(page).to have_content 'Surrealism'
     expect(page).to have_content 'Salvador Dali'
+
+    click_link 'Salvador Dali'
+
+    click_button 'Delete'
+
+    expect(page).to have_no_content 'Surrealism'
+    expect(page).to have_no_content 'Salvador Dali'
   end
 end
