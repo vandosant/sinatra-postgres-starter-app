@@ -24,7 +24,7 @@ class Application < Sinatra::Application
   end
 
   post '/artists' do
-    DB[:artists].insert(:name => params[:name])
+    DB[:artists].insert(:name => params[:name], :genre => params[:genre])
     redirect '/artists'
   end
 end

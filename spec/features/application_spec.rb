@@ -4,12 +4,6 @@ require 'capybara/rspec'
 Capybara.app = Application
 
 feature 'Homepage' do
-  scenario 'Shows the welcome message' do
-    visit '/'
-
-    expect(page).to have_content 'Welcome!'
-  end
-
   scenario 'Artist CRUD' do
     visit '/'
 
@@ -17,8 +11,10 @@ feature 'Homepage' do
     click_link 'Create'
 
     fill_in 'name', with: 'Salvador Dali'
+    fill_in 'genre', with: 'Surrealist'
     click_button 'Create Artist'
 
     expect(page).to have_content 'Salvador Dali'
+    expect(page).to have_content 'Surrealist'
   end
 end
